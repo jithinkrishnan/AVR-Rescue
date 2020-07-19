@@ -1,0 +1,16 @@
+Fuse Settings to change 1 MHz Internal oscillator to  16 MHZ external crystal oscillator.
+
+Atmega328P
+==========
+
+avrdude -c usbasp -p m328p -C avrdude.conf -U lfuse:w:0xFF:m -U hfuse:w:0xDE:m -U efuse:w:0x05:m --- 16 MHz
+
+avrdude -c usbasp -p m328p -C avrdude.conf -U lfuse:w:0xE2:m -U hfuse:w:0xDA:m -U efuse:w:0x05:m -- 8MHz Internal
+
+Atmega328
+==========
+
+Fuse Bit Flashing
+avrdude -c usbasp -p m328 -C avrdude.conf -U lfuse:w:0xFF:m -U hfuse:w:0xDE:m -U efuse:w:0x05:m
+Hex File Loading
+avrdude -c usbasp -p m328 -C avrdude.conf -U flash:w:main.hex
